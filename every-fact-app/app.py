@@ -11,11 +11,11 @@ ROOT = Path(__file__).resolve().parents[0]
 
 def lambda_handler(event, context):
     print("Get credentials")
-    consumer_key = os.getenv("TWITTERCONSUMERKEY")
-    consumer_secret = os.getenv("TWITTERCONSUMERSECRET")
-    access_token = os.getenv("TWITTERACCESSTOKENKEY")
-    access_token_secret = os.getenv("TWITTERACCESSTOKENSECRET")
-    openai_token = os.getenv("OPENAITOKEN")
+    consumer_key = os.getenv("TwitterConsumerKey")
+    consumer_secret = os.getenv("TwitterConsumerSecret")
+    access_token = os.getenv("TwitterAccessTokenKey")
+    access_token_secret = os.getenv("TwitterAccessTokenSecret")
+    openai_token = os.getenv("OpenAiToken")
     print("Authenticate")
     api = twitter.Api(consumer_key,
                       consumer_secret,
