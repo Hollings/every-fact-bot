@@ -31,7 +31,7 @@ Resources:
         Schedule1:
           Type: Schedule
           Properties:
-            Schedule: rate(30 minutes)
+            Schedule: cron(*/55 * * * *)
       Layers:
         - 'arn:aws:lambda:us-west-1:780997964150:layer:every-fact-libraries:1'
       Environment:
