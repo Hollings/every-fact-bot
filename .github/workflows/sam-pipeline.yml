@@ -15,9 +15,5 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-west-1
       # sam build
-      - run: sam build --use-container
-
-# Run Unit tests- Specify unit tests here
-
-# sam deploy
-      - run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name sam-hello-world --s3-bucket every-fact-deployment --capabilities CAPABILITY_IAM --region ##region##
+      - run: sam build --use-container --parameter-overrides OPENAITOKEN=${{ secrets.OPENAITOKEN }} TWITTERCONSUMERKEY=${{ secrets.TWITTERCONSUMERKEY }} TWITTERCONSUMERSECRET=${{ secrets.TWITTERCONSUMERSECRET }} TWITTERACCESSTOKENKEY=${{ secrets.TWITTERACCESSTOKENKEY }} TWITTERACCESSTOKENSECRET=${{ secrets.TWITTERACCESSTOKENSECRET }} --build-dir every_fact_bot/build
+      - run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name sam-hello-world --s3-bucket aws-sam-cli-managed-default-samclisourcebucket-crz2b1v0rq6j --capabilities CAPABILITY_IAM --region us-west-1 --parameter-overrides OPENAITOKEN=${{ secrets.OPENAITOKEN }} TWITTERCONSUMERKEY=${{ secrets.TWITTERCONSUMERKEY }} TWITTERCONSUMERSECRET=${{ secrets.TWITTERCONSUMERSECRET }} TWITTERACCESSTOKENKEY=${{ secrets.TWITTERACCESSTOKENKEY }} TWITTERACCESSTOKENSECRET=${{ secrets.TWITTERACCESSTOKENSECRET }}
