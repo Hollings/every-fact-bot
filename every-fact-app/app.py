@@ -91,6 +91,6 @@ def lambda_handler(event, context):
         else:
             response += '.'
     print(f"Posting tweet: '{response}'")
-    api.PostUpcdate(response)
+    api.PostUpdate(response)
 
     return {"statusCode": 200, "tweet": response}
