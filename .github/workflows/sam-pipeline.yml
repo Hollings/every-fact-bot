@@ -16,4 +16,4 @@ jobs:
           aws-region: us-west-1
       # sam build
       - run: sam build --use-container --build-dir every_fact_bot/build
-      - run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name sam-hello-world --s3-bucket aws-sam-cli-managed-default-samclisourcebucket-crz2b1v0rq6j --capabilities CAPABILITY_IAM --region us-west-1
+      - run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name sam-hello-world --s3-bucket sample-lambda-hollings --capabilities CAPABILITY_IAM --region us-west-1
