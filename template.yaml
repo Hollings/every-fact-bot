@@ -24,7 +24,7 @@ Resources:
 #        TWITTERACCESSTOKENKEY: !Ref TWITTERACCESSTOKENKEY
 #        TWITTERACCESSTOKENSECRET: !Ref TWITTERACCESSTOKENSECRET
     Properties:
-      CodeUri: every_fact_bot/
+      CodeUri: every-fact-app/
       Handler: app.lambda_handler
       Runtime: python3.8
       Architectures:
