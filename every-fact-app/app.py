@@ -51,15 +51,15 @@ def lambda_handler(event, context):
     prompt = random.choice(prompts).replace("X", string.capwords(word))
 
     # Pick a random Temperature value
-    # 1% chance to just go wild with maximum temperature
-    if random.random() > 0.99:
+    # 0.1% chance to just go wild with maximum temperature
+    if random.random() > 0.999:
         temperature = 2.0
         presence_penalty = 2.0
         frequency_penalty = 2.0
     else:
-        temperature = random.normalvariate(1, 0.3) # Get some value between 0.5ish and 1.5ish
-        presence_penalty = random.normalvariate(0,0.1)
-        frequency_penalty = random.normalvariate(0,0.1)
+        temperature = random.normalvariate(0.7, 0.2)  # Get some value between 0.5ish and 1.5ish
+        presence_penalty = random.normalvariate(0, 0.1)
+        frequency_penalty = random.normalvariate(0, 0.1)
 
     # Get OpenAI's response
     # TODO - get more than 1 response and pick one that doesn't contain "There is no evidence" and "Weird X Fact: The Weird X..." because they show up way too often
