@@ -34,10 +34,10 @@ Resources:
             Schedule: rate(30 minutes)
       Layers:
         - 'arn:aws:lambda:us-west-1:780997964150:layer:every-fact-libraries:1'
-      Environment:
-        Variables:
-          OpenAiToken: aaaa
-#          TWITTERCONSUMERKEY: !Ref TWITTERCONSUMERKEY
+#      Environment:
+#        Variables:
+#          OpenAiToken: aaaa
+#          TWITTERCONSUMERKEY: !Ref TWITTERCONSUMERKEY1
 #          TWITTERCONSUMERSECRET: !Ref TWITTERCONSUMERSECRET
 #          TWITTERACCESSTOKENKEY: !Ref TWITTERACCESSTOKENKEY
 #          TWITTERACCESSTOKENSECRET: !Ref TWITTERACCESSTOKENSECRET

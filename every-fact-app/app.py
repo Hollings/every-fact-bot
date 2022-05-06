@@ -1,5 +1,6 @@
 import os
 import random
+import re
 import string
 from pathlib import Path
 
@@ -86,8 +87,10 @@ def lambda_handler(event, context):
 
     # if response doesnt end in a period, either cut off the sentence at the last period or add one.
     if not response.endswith("."):
-        if response.find(".") != -1:
-            response = response[:response.rfind(".")] + "."
+        pattern = re.compile("(?s:.*)\. [A-Z]")
+        if pattern.findall(response):
+            # Cut off the sentence at the last period plus capital letter
+            response = response[:pattern.search(response).end()-2]
         else:
             response += '.'
     print(f"Posting tweet: '{response}'")
